@@ -1,19 +1,18 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: comments
 #
 #  id         :integer          not null, primary key
-#  title      :string
 #  body       :text
+#  post_id    :integer
+#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
 #
 
-require 'test_helper'
+class Comment < ApplicationRecord
+  belongs_to :post
+  belongs_to :user
 
-class PostTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  validates :body, presence: true
 end
