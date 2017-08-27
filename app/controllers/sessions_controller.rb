@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       sign_in(user)
+      flash[:notice] = "Inicio de Sesión"
       redirect_to root_path
     else
       render :new
@@ -17,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
+    flash[:notice] = "Salió de la Sesión"
     redirect_to root_path
   end
 end
