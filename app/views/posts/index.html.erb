@@ -7,9 +7,9 @@
             <div class="posts-details">
               <span class="post-title"><h2><%= link_to post.title, post %></h2></span>
               <br>
-              <div class="">
+              <div class="details-publication">
                 <br>
-                   Fecha creación <%= time_ago_in_words(post.created_at) %>
+                   Publicado por: <%= post.user.email %>   <%= time_ago_in_words(post.created_at) %>
               </div>
               <span class="post-body"><%= post.body %></span>
             </div>
