@@ -15,7 +15,7 @@ gem 'puma', '~> 3.7'
 #
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '>= 3.2'
 # jquery
 gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,6 +39,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'annotate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# bootstrap-markdown
+gem 'rails-bootstrap-markdown'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

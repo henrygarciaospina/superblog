@@ -11,8 +11,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
-
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8793,4 +8791,34 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+/* line 4, /home/henry/RoR_I/superblog/app/assets/stylesheets/posts.scss */
+.posts {
+  margin-top: 40px;
+}
+/* line 6, /home/henry/RoR_I/superblog/app/assets/stylesheets/posts.scss */
+.posts .post {
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+/* line 10, /home/henry/RoR_I/superblog/app/assets/stylesheets/posts.scss */
+.posts .post .posts-details {
+  float: left;
+}
+/* line 13, /home/henry/RoR_I/superblog/app/assets/stylesheets/posts.scss */
+.posts .post .posts-details .post-title a {
+  color: #303030;
+  font-size: 21px;
+  line-height: 1;
+}
+/* line 18, /home/henry/RoR_I/superblog/app/assets/stylesheets/posts.scss */
+.posts .post .posts-details .post-title a:hover, .posts .post .posts-details .post-title a:focus {
+  color: #F04500;
+  text-decoration: none;
+}
+/* line 21, /home/henry/RoR_I/superblog/app/assets/stylesheets/posts.scss */
+.posts .post .posts-details .post-body {
+  display: block;
+  color: #999;
+  font-size: 16px;
 }
