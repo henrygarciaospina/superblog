@@ -4,13 +4,12 @@
       <div class="post-wrapper">
         <div class="post clearfix">
         <% @posts.each do |post| %>
-            <div class="post-details">
-              <span class="post-title"><%= link_to post.title, post %></span>
+            <div class="posts-details">
+              <span class="post-title"><h2><%= link_to post.title, post %></h2></span>
               <br>
               <div class="">
-                Publicado por <%= post.user.email %>  hace
                 <br>
-                   Fecha creación <%= post.created_at %>  Fecha actual <%=  Time.now %>
+                   Fecha creación <%= time_ago_in_words(post.created_at) %>
               </div>
               <span class="post-body"><%= post.body %></span>
             </div>
