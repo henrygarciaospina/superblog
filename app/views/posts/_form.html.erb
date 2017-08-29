@@ -2,8 +2,7 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h1><%= form_title %></h1>
-
-      <% if @product.errors.any? %>
+      <% if @post.errors.any? %>
         <div class="alert alert-danger">
           <ul>
           <% @post.errors.full_messages.each do |msg| %>
@@ -15,10 +14,12 @@
 
       <%= form_for @post do |f| %>
         <div class="form-group">
-          <%= f.text_field :title, class: "form-control input-lg", placeholder: "Ingresa el titulo del post"%>
+          <%= f.label :Título %>
+          <%= f.text_field :title, class: "form-control input-lg" %>
         </div>
         <div class="form-group">
-          <%= f.text_area :body, class: "form-control input-lg", placeholder: "Ingresa el contenido del posts " %>
+          <%= f.label :Cuerpo %>
+          <%= f.text_area :body,  size: "60x10", class: "form-control input-lg" %>
         </div>
         <div>
           <%= f.submit form_title, class: "btn btn-primary btn-lg btn-block" %>
