@@ -1,13 +1,16 @@
 .post-wrapper{
 
-  .post{
+ .alert {
+    padding: 0px !important;
+    margin-bottom: 0px !important;
+  }
 
+  .post{
 
       .posts-details {
         float: left;
 
           .post-title a {
-            color: #303030;
             font-size: 21px;
             font-weight: bold;
             line-height: 1;
@@ -28,4 +31,16 @@
           }
       }
   }
+}
+
+.actions {
+      margin-top: 30px;
+
+      a {
+        color: #ccc;
+        font-size: 21px;
+        margin-right: 5px;
+
+        &:hover { color: white; }
+      }
 }

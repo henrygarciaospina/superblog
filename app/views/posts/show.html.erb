@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1 class="post-title"> <%= @post.title %> </h1>
+      <div class="date">
+        Publicado por " <%= @post.user.email %> " hace <%= time_ago_in_words(@post.created_at) %>
+        <!-- current_user.email -->
+        <br><br>
+      </div>
+      <div class="date" data-provide="markdown-show">
+        <%= @post.body %>
+      </div>
+      <br><br>
+    </div>
+  </div>
+</div>

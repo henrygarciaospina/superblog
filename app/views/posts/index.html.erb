@@ -5,16 +5,24 @@
         <div class="post clearfix">
         <% @posts.each do |post| %>
             <div class="posts-details">
-              <span class="post-title"><h2><%= link_to post.title, post %></h2></span>
-              <br>
+              <h2 class="post-title"><%= link_to post.title, post %></h2>
               <div class="details-publication">
-                <br>
                    Publicado por: <%= post.user.email %>   <%= time_ago_in_words(post.created_at) %>
               </div>
-              <span class="post-body"><%= post.body %></span>
+              <% if post.body.length >= 250 %>
+                  <span class="post-body"><%= truncate(post.body, :length => 250) %></span>
+              <% else %>
+                   <span class="post-body"><%= post.body %></span>
+              <% end %>
             </div>
+            <% if signed_in? &&  post.user == current_user %>
+              <div class="actions">
+                <%= link_to " <span class='glyphicon glyphicon-pencil'>Editar</span>  ".html_safe, edit_post_path(@post) %>
+                <%= link_to " <span class='glyphicon glyphicon-trash'>Eliminar</span> ".html_safe,  @post,  method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %>
+              </div>
+            <% end %>
         <% end %>
-        </div>
+      </div>
       </div>
     </div>
   </div>
