@@ -26,6 +26,7 @@
 
           .post-body {
             display: block;
+            margin-bottom: 10px;
             font-size: 16px;
             text-align: justify;
           }
@@ -34,13 +35,11 @@
 }
 
 .actions {
-      margin-top: 30px;
-
       a {
-        color: #ccc;
-        font-size: 21px;
+        color: #636363;
+        font-size: 15px;
         margin-right: 5px;
 
-        &:hover { color: white; }
+        &:hover { color: black; }
       }
 }
