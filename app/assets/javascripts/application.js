@@ -15,3 +15,4 @@
 //= require bootstrap-sprockets
 //= require bootstrap-markdown-bundle
 //= require_tree .
+//= require md_simple_editor
