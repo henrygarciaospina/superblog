@@ -6,7 +6,7 @@
           <h5><%= link_to 'Volver', posts_path %></h5>
           <h1 class="post"> <%= @post.title %> </h1>
           <div class="details-publication-show">
-            Publicado por " <%= @post.user.email %> " hace <%= time_ago_in_words(@post.created_at) %>
+            Publicado por  <%= @post.user.email %>  <%= time_ago_in_words(@post.created_at) %>
           </div>
           <div class="post-show-content">
              <span ><%= @post.body %></span>
