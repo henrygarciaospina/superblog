@@ -39,6 +39,7 @@
 
         &:hover { color: black; }
       }
+      margin-bottom: 30px;
 }
 
 .alert {
@@ -46,9 +47,9 @@
   margin-bottom: 0px !important;
 }
 
-.post-body-show {
+.post-show-content {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   font-size: 18px;
   text-align: justify;
 }

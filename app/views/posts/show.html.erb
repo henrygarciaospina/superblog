@@ -3,14 +3,38 @@
     <div class="col-sm-10 col-sm-offset-1">
       <div class="post-wrapper">
         <div class="post clearfix">
+          <h5><%= link_to 'Volver', posts_path %></h5>
           <h1 class="post"> <%= @post.title %> </h1>
           <div class="details-publication-show">
-            Publicado por " <%= @post.user.email %> " hace <%= time_ago_in_words(@post.created_at) %>
+            Publicado por  <%= @post.user.email %>  <%= time_ago_in_words(@post.created_at) %>
           </div>
-          <div>
-             <span class="post-body-show"><%= @post.body %></span>
+          <div class="post-show-content">
+             <span ><%= @post.body %></span>
           </div>
-          <br><br>
+
+          <div class="comments">
+           <% @post.comments.each do |comment| %>
+             <div class="panel panel-default">
+               <header class="panel-heading">
+                <%= comment.user.email %> comento <%= time_ago_in_words(comment.created_at) %>
+              </header>
+                 <div class="panel-body"><%= comment.body %></div>
+             </div>
+           <% end %>
+
+           <% if signed_in? %>
+             <%= form_for [@post, @post.comments.build] do |f| %>
+               <div class="form-group">
+                 <%= f.label :'Nuevo comentario' %>
+                 <%= f.text_area :body, class: "form-control"%>
+               </div>
+
+               <div class="actions text-right">
+                 <%= f.submit "Comentar", class: "btn btn-primary" %>
+               </div>
+             <% end %>
+           <% end %>
+         </div>
         </div>
       </div>   <!-- end post-wrapper -->
     </div>
