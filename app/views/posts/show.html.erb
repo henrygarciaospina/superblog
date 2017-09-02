@@ -16,7 +16,7 @@
            <% @post.comments.each do |comment| %>
              <div class="panel panel-default">
                <header class="panel-heading">
-                <%= comment.user.email %> comento <%= time_ago_in_words(comment.created_at) %>
+                <%= comment.user.email %> comentó <%= time_ago_in_words(comment.created_at) %>
               </header>
                  <div class="panel-body"><%= comment.body %></div>
              </div>
