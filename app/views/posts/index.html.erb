@@ -10,9 +10,9 @@
                    Publicado por: <%= post.user.email %>   <%= time_ago_in_words(post.created_at) %>
               </div>
               <% if post.body.length >= 250 %>
-                   <span class="post-body"><%= truncate(markdown(post.body), :length => 250) %></span>
+                   <span class="post-body"><%= truncate(markdown(post.body), :length => 250).html_safe %></span>
               <% else %>
-                   <span class="post-body"><%= markdown(post.body) %></span>
+                   <span class="post-body"><%= markdown(post.body).html_safe %></span>
               <% end %>
             </div>
             <% if signed_in? &&  post.user == current_user %>
