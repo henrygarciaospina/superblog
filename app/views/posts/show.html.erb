@@ -9,7 +9,7 @@
             Publicado por  <%= @post.user.email %>  <%= time_ago_in_words(@post.created_at) %>
           </div>
           <div class="post-show-content">
-             <span ><%= @post.body %></span>
+             <span ><%= markdown(@post.body) %></span>
           </div>
 
           <div class="comments">

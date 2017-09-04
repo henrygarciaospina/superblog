@@ -26,6 +26,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'simple_form'
 #Markdown simple editor
 gem 'md_simple_editor'
+# Kaminar para manejar paginación
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+#
+gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'
+#
+gem 'redcarpet', '~> 3.4.0'
 #
 gem "font-awesome-rails"
 # Use CoffeeScript for .coffee assets and views

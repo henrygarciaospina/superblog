@@ -10,9 +10,9 @@
                    Publicado por: <%= post.user.email %>   <%= time_ago_in_words(post.created_at) %>
               </div>
               <% if post.body.length >= 250 %>
-                  <span class="post-body"><%= truncate(post.body, :length => 250) %></span>
+                   <span class="post-body"><%= truncate(markdown(post.body), :length => 250) %></span>
               <% else %>
-                   <span class="post-body"><%= post.body %></span>
+                   <span class="post-body"><%= markdown(post.body) %></span>
               <% end %>
             </div>
             <% if signed_in? &&  post.user == current_user %>
@@ -21,7 +21,11 @@
                 <%= link_to " <span class='glyphicon glyphicon-trash'>Eliminar</span> ".html_safe,  post,  method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %>
               </div>
             <% end %>
+            <% if post != @posts.last %>
+                <hr />
+            <% end %>
         <% end %>
+        <%= paginate(@posts) %>
       </div>
       </div>
     </div>
