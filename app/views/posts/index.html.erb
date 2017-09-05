@@ -3,14 +3,16 @@
     <div class="col-sm-10 col-sm-offset-1">
       <div class="post-wrapper">
         <div class="post clearfix">
+          <%= paginate(@posts) %>
+          <br>
         <% @posts.each do |post| %>
             <div class="posts-details">
               <h2 class="post-title"><%= link_to post.title, post %></h2>
               <div class="details-publication">
-                   Publicado por: <%= post.user.email %>   <%= time_ago_in_words(post.created_at) %>
+                   Publicado por: <%= post.user.email %> <%= time_ago_in_words(post.created_at) %>
               </div>
               <% if post.body.length >= 250 %>
-                   <span class="post-body"><%= truncate(markdown(post.body), :length => 250).html_safe %></span>
+                   <span class="post-body"><%= markdown(truncate(post.body, length: 250)).html_safe %></span>
               <% else %>
                    <span class="post-body"><%= markdown(post.body).html_safe %></span>
               <% end %>
@@ -21,13 +23,11 @@
                 <%= link_to " <span class='glyphicon glyphicon-trash'>Eliminar</span> ".html_safe,  post,  method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %>
               </div>
             <% end %>
-            <% if post != @posts.last %>
-                <hr />
-            <% end %>
-        <% end %>
-        <%= paginate(@posts) %>
-      </div>
+         <% end %>
+       </div>
+       <%= paginate(@posts) %>
       </div>
     </div>
+     <br>
   </div>
 </div>
